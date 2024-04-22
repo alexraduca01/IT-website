@@ -7,7 +7,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 const Sidebar = ({ navlinks, closeSidebar, sidebarOpen }) => {
   return (
     <aside
-      className={`flex h-screen absolute bg-stone-50 flex-col items-center justify-center gap-3 overflow-hidden ${
+      className={`flex h-screen absolute bg-stone-50 flex-col items-center justify-center gap-3 overflow-hidden z-20 ${
         sidebarOpen ? "w-full p-2" : "w-0 p-0"
       }`}
       style={{ transition: "width 0.3s linear" }}
