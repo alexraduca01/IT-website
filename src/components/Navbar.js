@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-// import componenti 
+// import componenti
 import Sidebar from "./Sidebar";
 
 const Navbar = () => {
@@ -18,11 +18,11 @@ const Navbar = () => {
 
   const openSidebar = () => {
     setSidebarOpen(true);
-  }
+  };
 
   const closeSidebar = () => {
     setSidebarOpen(false);
-  }
+  };
 
   const navlinks = [
     {
@@ -49,17 +49,21 @@ const Navbar = () => {
 
   return (
     <nav>
-      {
-        sidebarOpen && <Sidebar closeSidebar={closeSidebar} navlinks={navlinks} />
-      }
+      <Sidebar closeSidebar={closeSidebar} sidebarOpen={sidebarOpen} navlinks={navlinks} />
       <div className="flex justify-between items-center px-3 py-2 bg-stone-50">
-        <img
-          src="https://shop.raceya.fit/wp-content/uploads/2020/11/logo-placeholder.jpg"
-          className="w-12 sm:w-24"
-          alt="logo"
-        />
+        <Link to="/">
+          <img
+            src="https://shop.raceya.fit/wp-content/uploads/2020/11/logo-placeholder.jpg"
+            className="w-12 sm:w-24"
+            alt="logo"
+          />
+        </Link>
         <div className="sm:hidden">
-          <FontAwesomeIcon icon={faBars} onClick={openSidebar} className="hover:text-blue-500 transition ease-linear duration-300 text-xl cursor-pointer" />
+          <FontAwesomeIcon
+            icon={faBars}
+            onClick={openSidebar}
+            className="hover:text-blue-500 transition ease-linear duration-300 text-xl cursor-pointer"
+          />
         </div>
         <ul className="list-none hidden sm:flex gap-2 sm:gap-5">
           {navlinks.map((link) => (
