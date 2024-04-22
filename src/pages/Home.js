@@ -1,11 +1,17 @@
-import React from 'react'
+// import vari
+import React from "react";
+
+// import componenti
+import Hero from "../components/Hero";
 
 const Home = () => {
   return (
-    <div>
-      Sono la Home
-    </div>
-  )
-}
+    <>
+      <div>
+        <Hero />
+      </div>
+    </>
+  );
+};
 
-export default Home
+export default Home;

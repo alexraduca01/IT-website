@@ -48,7 +48,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav>
+    <nav style={{ height: "80px" }}>
       <Sidebar closeSidebar={closeSidebar} sidebarOpen={sidebarOpen} navlinks={navlinks} />
       <div className="flex justify-between items-center px-3 py-2 bg-stone-50">
         <Link to="/">
