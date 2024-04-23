@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 
 // import componenti
 import Hero from "../components/Hero";
-import Form from "../components/Form"
+import Form from "../components/Form";
 
 // import immagini
 import WorkImg from "../assets/images/work.jpg";
+import ReliableImg from "../assets/images/reliable.jpg";
 
 const Home = () => {
-
   return (
     <>
       <div>
@@ -19,7 +19,11 @@ const Home = () => {
         <section className="w-full p-10">
           <div className="w-4/5 m-auto flex gap-10 justify-between bg-slate-100 shadow">
             <div className="w-1/2">
-              <img src={WorkImg} alt="working for you" className="w-full shadow" />
+              <img
+                src={WorkImg}
+                alt="working for you"
+                className="w-full shadow"
+              />
             </div>
             <div className="w-1/2 px-10 flex flex-col justify-evenly">
               <h2 className="text-3xl">Our Mission</h2>
@@ -45,6 +49,33 @@ const Home = () => {
                 </button>
               </Link>
             </div>
+          </div>
+        </section>
+        {/* sezione motivazionale */}
+        <section className="w-full p-10">
+          <div className="w-4/5 m-auto flex gap-10 justify-between bg-slate-100 shadow">
+            <div className="w-1/2 px-10 flex flex-col justify-evenly">
+              <h2 className="text-3xl">Why choose us ?</h2>
+              <p className="text-xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                convallis sem eu elit accumsan, non sagittis ipsum vulputate.
+                Sed eget dictum elit. Praesent porttitor urna in ligula posuere
+                tempor. Nam semper est ac arcu vestibulum, quis luctus nisi
+                commodo. Nulla eget aliquam est. Morbi rhoncus risus vel ipsum
+                viverra eleifend. Nullam varius sapien nec augue fermentum, a
+                fringilla metus posuere. Vivamus eu aliquet turpis. Integer
+                tristique vestibulum mi, id gravida purus lobortis vel. Sed
+                pharetra, ipsum a pellentesque finibus, purus quam laoreet
+                justo, ut ultrices turpis ante non mi. Suspendisse potenti. Duis
+                consectetur nisl et quam laoreet, sed posuere ligula posuere.
+                Aenean fermentum risus quis metus convallis, in lacinia ligula
+                fermentum. Morbi sed scelerisque lacus. Cras sit amet diam nec
+                velit volutpat fermentum.
+              </p>
+            </div>
+            <div className="w-1/2">
+              <img src={ReliableImg} alt="Why choose us" className="w-full shadow" />
+            </div> 
           </div>
         </section>
         {/* sezione form  */}

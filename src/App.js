@@ -1,7 +1,7 @@
 // import vari
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// componenti 
+// componenti
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -13,21 +13,23 @@ import Team from "./pages/Team";
 import ErrorPage from "./pages/ErrorPage";
 
 const App = () => {
-  return(
+  return (
     <Router className="App">
-      <header>
-        <Navbar />
-      </header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="*" element={<ErrorPage />} />
-      </Routes>
-      <Footer />
+      <div className="bg-stone-100">
+        <header>
+          <Navbar />
+        </header>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
-  )
+  );
 };
 
 export default App;
