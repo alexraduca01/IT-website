@@ -12,6 +12,14 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
 const Hero = () => {
+
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   const swiperSlides = [
     {
       id: 1,
@@ -51,9 +59,9 @@ const Hero = () => {
               />
               <div className="absolute top-1/2 left-1/2 w-full h-full z-10 flex gap-7 justify-center items-center flex-col bg-black/25 -translate-x-1/2 -translate-y-1/2">
                 <h2 className="text-4xl font-bold text-white">{el.body}</h2>
-                <a href="#" className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
+                <button onClick={() => scrollTo("contactForm")} className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded scroll-smooth">
                   Contact Us
-                </a>
+                </button>
               </div>
             </SwiperSlide>
           </div>
