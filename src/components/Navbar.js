@@ -42,8 +42,8 @@ const Navbar = () => {
     },
     {
       id: 4,
-      name: "Contacts",
-      url: "/contacts",
+      name: "Our Team",
+      url: "/team",
     },
   ];
 

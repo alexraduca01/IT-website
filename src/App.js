@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
-import Contacts from "./pages/Contacts";
+import Team from "./pages/Team";
 import ErrorPage from "./pages/ErrorPage";
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/contacts" element={<Contacts />} />
+        <Route path="/team" element={<Team />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />
