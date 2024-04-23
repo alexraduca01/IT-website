@@ -1,13 +1,13 @@
-// import vari
+// react imports
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// import immagini
+// images imports
 import HardwareImg from "../assets/images/hardware.jpg";
 import PrinterImg from "../assets/images/printer.jpg";
 import WebDevImg from "../assets/images/webdev.jpg";
 
-// import dipendenze swiper
+// swiper dependencies imports
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 

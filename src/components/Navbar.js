@@ -1,10 +1,10 @@
-// import vari
+// react imports
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-// import componenti
+// component imports
 import Sidebar from "./Sidebar";
 
 // images imports
@@ -14,7 +14,7 @@ const Navbar = () => {
   const [active, setActive] = useState("/");
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // funzione che mi permette di settare il link attivo a livello di interfaccia
+  // function that sets the active link
   const handleActive = (url) => {
     setActive(url);
   };

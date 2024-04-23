@@ -1,7 +1,8 @@
+// react imports
 import React, { useState } from "react";
 
 const Form = () => {
-  // controllo messaggio
+  // message control
 
   const [message, setMessage] = useState("");
   const [messageLength, setMessageLength] = useState(0);
@@ -12,7 +13,7 @@ const Form = () => {
     setMessageLength(newMessage.length);
   };
 
-  // controllo nome
+  // name control
 
   const [nameValue, setNameValue] = useState("");
   const [isNameValid, setIsNameValid] = useState(true);
@@ -30,7 +31,7 @@ const Form = () => {
     }
   };
 
-  // controllo cognome
+  // surname control
 
   const [surnameValue, setSurnameValue] = useState("");
   const [isSurnameValid, setIsSurnameValid] = useState(true);
@@ -48,7 +49,7 @@ const Form = () => {
     }
   };
 
-  // controllo email
+  // email control
 
   const [emailValue, setEmailValue] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);

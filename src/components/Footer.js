@@ -1,8 +1,8 @@
-// import vari
+// react imports
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import fontawesome
+// fontawesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLinkedin,

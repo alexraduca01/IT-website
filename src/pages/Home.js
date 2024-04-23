@@ -1,12 +1,12 @@
-// import vari
+// react imports
 import React from "react";
 import { Link } from "react-router-dom";
 
-// import componenti
+// components imports
 import Hero from "../components/Hero";
 import Form from "../components/Form";
 
-// import immagini
+// images imports
 import WorkImg from "../assets/images/work.jpg";
 import ReliableImg from "../assets/images/reliable.jpg";
 
@@ -15,7 +15,7 @@ const Home = () => {
     <>
       <div>
         <Hero />
-        {/* sezione riassuntiva della sezione chi siamo */}
+        {/* About us section */}
         <section className="w-full p-10">
           <div className="w-4/5 m-auto flex gap-10 justify-between bg-slate-100 shadow">
             <div className="w-1/2">
@@ -51,7 +51,7 @@ const Home = () => {
             </div>
           </div>
         </section>
-        {/* sezione motivazionale */}
+        {/* motivational section */}
         <section className="w-full p-10">
           <div className="w-4/5 m-auto flex gap-10 justify-between bg-slate-100 shadow">
             <div className="w-1/2 px-10 flex flex-col justify-evenly">
@@ -78,7 +78,7 @@ const Home = () => {
             </div> 
           </div>
         </section>
-        {/* sezione form  */}
+        {/* form section */}
         <section className="w-full p-10">
           <div className="w-4/5 m-auto bg-slate-100 pb-10 px-8 shadow">
             <div className="py-10 flex justify-evenly gap-96">

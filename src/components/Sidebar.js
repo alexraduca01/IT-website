@@ -1,4 +1,4 @@
-// import vari
+// react imports
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
