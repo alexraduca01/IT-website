@@ -68,7 +68,7 @@ const Form = () => {
 
   return (
     <form
-      className="w-1/2 m-auto p-5 bg-white rounded-xl shadow flex flex-col gap-5"
+      className="w-1/2 m-auto p-5 bg-white rounded-xl shadow flex flex-col gap-8"
       id="contactForm"
     >
       <div className="flex gap-3 justify-between">

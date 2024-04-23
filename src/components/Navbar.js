@@ -7,6 +7,9 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 // import componenti
 import Sidebar from "./Sidebar";
 
+// images imports
+import Logo from "../assets/images/logo.png";
+
 const Navbar = () => {
   const [active, setActive] = useState("/");
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -50,11 +53,11 @@ const Navbar = () => {
   return (
     <nav style={{ height: "80px" }}>
       <Sidebar closeSidebar={closeSidebar} sidebarOpen={sidebarOpen} navlinks={navlinks} />
-      <div className="flex justify-between items-center px-3 py-2 bg-neutral-900">
+      <div className="flex justify-between items-center px-5 py-2 bg-neutral-900">
         <Link to="/">
           <img
-            src="https://shop.raceya.fit/wp-content/uploads/2020/11/logo-placeholder.jpg"
-            className="w-12 sm:w-24"
+            src={Logo}
+            className="h-16"
             alt="logo"
           />
         </Link>
