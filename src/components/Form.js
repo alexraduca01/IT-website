@@ -68,7 +68,7 @@ const Form = () => {
 
   return (
     <form
-      className="w-1/2 m-auto p-5 bg-white rounded-md flex flex-col gap-5"
+      className="w-1/2 m-auto p-5 bg-white rounded-xl shadow flex flex-col gap-5"
       id="contactForm"
     >
       <div className="flex gap-3 justify-between">
@@ -163,16 +163,18 @@ const Form = () => {
           id="messageLabel"
         >
           Message <span className="text-red-500">*</span>
-          <span
-            className={`absolute  ${
-              messageLength === 1000 || messageLength < 20
-                ? "text-red-500"
-                : "text-green-400"
-            }`}
-            style={{ right: "0", bottom: "-20px" }}
-          >
-            {messageLength}/1000
-          </span>
+          {messageLength > 0 && (
+            <span
+              className={`absolute  ${
+                messageLength === 1000 || messageLength < 20
+                  ? "text-red-500"
+                  : "text-green-400"
+              }`}
+              style={{ right: "0", bottom: "-20px" }}
+            >
+              {messageLength}/1000
+            </span>
+          )}
         </label>
         <textarea
           onChange={handleMessageChange}

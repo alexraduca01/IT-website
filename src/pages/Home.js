@@ -17,12 +17,12 @@ const Home = () => {
         <Hero />
         {/* sezione riassuntiva della sezione chi siamo */}
         <section className="w-full p-10">
-          <div className="w-4/5 m-auto flex gap-10 justify-between bg-slate-100">
+          <div className="w-4/5 m-auto flex gap-10 justify-between bg-slate-100 shadow">
             <div className="w-1/2">
-              <img src={WorkImg} alt="working for you" className="w-full" />
+              <img src={WorkImg} alt="working for you" className="w-full shadow" />
             </div>
             <div className="w-1/2 px-10 flex flex-col justify-evenly">
-              <h2 className="text-3xl">IT Website</h2>
+              <h2 className="text-3xl">Our Mission</h2>
               <p className="text-xl">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
                 convallis sem eu elit accumsan, non sagittis ipsum vulputate.
@@ -49,15 +49,15 @@ const Home = () => {
         </section>
         {/* sezione form  */}
         <section className="w-full p-10">
-          <div className="w-4/5 m-auto bg-slate-100 pb-10 px-8">
+          <div className="w-4/5 m-auto bg-slate-100 pb-10 px-8 shadow">
             <div className="py-10 flex justify-evenly gap-96">
               <h2 className="text-3xl">Complete the form</h2>
               <h2 className="text-3xl">Contact Us</h2>
             </div>
             <div className="w-full flex justify-between">
               <Form />
-              <div className="w-1/2 ps-10">
-                <div className="mb-10">
+              <div className="w-1/2 ps-10 flex flex-col justify-evenly">
+                <div className="mb-10 bg-white p-5 rounded-xl shadow">
                   <p className="text-xl mb-5">Call us</p>
                   <a
                     href="tel:+393333333333"
@@ -66,7 +66,7 @@ const Home = () => {
                     +39 333 333 3333
                   </a>
                 </div>
-                <div>
+                <div className="bg-white p-5 rounded-xl shadow">
                   <p className="text-xl mb-5">Or send us an email</p>
                   <a
                     href="mailto:professionalmail@mail.com"
