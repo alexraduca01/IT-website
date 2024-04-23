@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <nav style={{ height: "80px" }}>
       <Sidebar closeSidebar={closeSidebar} sidebarOpen={sidebarOpen} navlinks={navlinks} />
-      <div className="flex justify-between items-center px-3 py-2 bg-stone-50">
+      <div className="flex justify-between items-center px-3 py-2 bg-neutral-900">
         <Link to="/">
           <img
             src="https://shop.raceya.fit/wp-content/uploads/2020/11/logo-placeholder.jpg"
@@ -70,8 +70,8 @@ const Navbar = () => {
             <li key={link.id}>
               <Link
                 to={link.url}
-                className={`text-sm sm:text-xl transition ease-linear hover:text-blue-500 duration-300 ${
-                  active === link.url ? "text-blue-500" : ""
+                className={`text-sm sm:text-xl  transition ease-linear hover:text-blue-500 duration-300 ${
+                  active === link.url ? "text-blue-500" : "text-white"
                 } `}
                 onClick={() => handleActive(link.url)}
               >
