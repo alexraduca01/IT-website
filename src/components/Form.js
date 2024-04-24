@@ -4,7 +4,7 @@ import React, { useState, useRef } from "react";
 // emailjs import
 import emailjs from "@emailjs/browser";
 
-const Form = () => {
+const Form = ({openPopup}) => {
   // message control
 
   const [message, setMessage] = useState("");
@@ -90,6 +90,7 @@ const Form = () => {
           setIsNameValid(true);
           setIsSurnameValid(true);
           setIsEmailValid(true);
+          openPopup();
         },
         (error) => {}
       );
