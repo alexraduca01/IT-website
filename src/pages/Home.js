@@ -74,7 +74,7 @@ const AboutSection = () => {
         <div className="w-full sm:w-1/2">
           <img src={WorkImg} alt="working for you" className="w-full shadow" />
         </div>
-        <div className="w-full sm:w-1/2 px-10 flex flex-col gap-y-2 sm:gap-y-0 sm:flex-row justify-evenly">
+        <div className="w-full sm:w-1/2 px-10 flex flex-col gap-y-2 sm:gap-y-0  justify-evenly">
           <h2 className="text-xl sm:text-3xl">Our Mission</h2>
           <p className="sm:text-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
