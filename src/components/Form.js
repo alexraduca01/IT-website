@@ -1,5 +1,8 @@
 // react imports
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+
+// emailjs import
+import emailjs from "@emailjs/browser";
 
 const Form = () => {
   // message control
@@ -22,7 +25,7 @@ const Form = () => {
     const initialValue = e.target.value;
     setNameValue(initialValue);
 
-    const pattern = /^[a-zA-Z]+$/;
+    const pattern = /^[a-zA-Z\s]+$/;
 
     if (pattern.test(initialValue)) {
       setIsNameValid(true);
@@ -67,8 +70,47 @@ const Form = () => {
     }
   };
 
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_a04ocnh", "template_jq86y22", form.current, {
+        publicKey: "WBe2niQdMhLL2Bt98",
+      })
+      .then(
+        () => {
+          form.current.reset();
+          setNameValue("");
+          setSurnameValue("");
+          setEmailValue("");
+          setMessage("");
+          setMessageLength(0);
+          setIsNameValid(true);
+          setIsSurnameValid(true);
+          setIsEmailValid(true);
+        },
+        (error) => {}
+      );
+  };
+
+  const handleFormReset = () => {
+    form.current.reset();
+    setNameValue("");
+    setSurnameValue("");
+    setEmailValue("");
+    setMessage("");
+    setMessageLength(0);
+    setIsNameValid(true);
+    setIsSurnameValid(true);
+    setIsEmailValid(true);
+  };
+
   return (
     <form
+      ref={form}
+      onSubmit={sendEmail}
       className="w-1/2 m-auto p-5 bg-white rounded-xl shadow flex flex-col gap-8"
       id="contactForm"
     >
@@ -85,6 +127,7 @@ const Form = () => {
             onChange={handleNameChange}
             type="text"
             id="first_name"
+            name="first_name"
             className={`bg-gray-50 border text-sm rounded-lg block w-full p-2.5 placeholder-gray-400 ${
               isNameValid ? "border-gray-600" : "border-red-500"
             }`}
@@ -108,6 +151,7 @@ const Form = () => {
             onChange={handleSurnameChange}
             type="text"
             id="last_name"
+            name="last_name"
             className={`bg-gray-50 border text-sm rounded-lg block w-full p-2.5 placeholder-gray-400 ${
               isSurnameValid ? "border-gray-600" : "border-red-500"
             }`}
@@ -132,6 +176,7 @@ const Form = () => {
           onChange={handleEmailChange}
           type="email"
           id="email"
+          name="email"
           className={`bg-gray-50 border text-sm rounded-lg block w-full p-2.5 placeholder-gray-400 ${
             isEmailValid ? "border-gray-600" : "border-red-500"
           }`}
@@ -145,14 +190,15 @@ const Form = () => {
       </div>
       <div className="w-full">
         <label
-          for="email"
+          for="phone"
           className="block mb-2 text-sm font-medium text-gray-900 "
         >
           Phone
         </label>
         <input
           type="text"
-          id="text"
+          id="phone"
+          name="phone"
           className="bg-gray-50 border text-sm rounded-lg block w-full p-2.5  border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500"
           maxLength={20}
         />
@@ -181,8 +227,8 @@ const Form = () => {
           onChange={handleMessageChange}
           value={message}
           rows={4}
-          type="text"
           id="message"
+          name="message"
           className="bg-gray-50 border text-sm rounded-lg block w-full p-2.5  border-gray-600 placeholder-gray-400  focus:ring-blue-500 focus:border-blue-500"
           minLength={20}
           maxLength={1000}
@@ -198,6 +244,7 @@ const Form = () => {
         </button>
         <button
           type="reset"
+          onClick={handleFormReset}
           className="bg-red-500 hover:bg-red-400 text-white font-bold py-2 px-4 border-b-4 border-red-700 hover:border-red-500 rounded"
         >
           Reset
