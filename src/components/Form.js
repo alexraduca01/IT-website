@@ -112,11 +112,11 @@ const Form = ({openPopup}) => {
     <form
       ref={form}
       onSubmit={sendEmail}
-      className="w-1/2 m-auto p-5 bg-white rounded-xl shadow flex flex-col gap-8"
+      className="w-full sm:w-1/2 m-auto p-5 bg-white rounded-xl shadow flex flex-col gap-8"
       id="contactForm"
     >
-      <div className="flex gap-3 justify-between">
-        <div className="w-1/2">
+      <div className="flex gap-3 flex-col sm:flex-row justify-between">
+        <div className="sm:w-1/2">
           <label
             for="first_name"
             className="block mb-2 text-sm font-medium text-gray-900 "
@@ -140,7 +140,7 @@ const Form = ({openPopup}) => {
             <p className="text-red-500">Please enter a valid name</p>
           )}
         </div>
-        <div className="w-1/2">
+        <div className="sm:w-1/2">
           <label
             for="last_name"
             className="block mb-2 text-sm font-medium text-gray-900"

@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
+// images imports
+import Logo from "../assets/images/logo.png";
+
 const Sidebar = ({ navlinks, closeSidebar, sidebarOpen }) => {
   return (
     <aside
-      className={`flex h-screen absolute bg-stone-50 flex-col items-center justify-center gap-3 overflow-hidden z-20 ${
+      className={`flex h-screen absolute top-0 left-0 bg-stone-50 flex-col items-center justify-center gap-3 z-20 ${
         sidebarOpen ? "w-full p-2" : "w-0 p-0"
       }`}
       style={{ transition: "width 0.3s linear" }}
@@ -19,11 +22,13 @@ const Sidebar = ({ navlinks, closeSidebar, sidebarOpen }) => {
         >
           <FontAwesomeIcon icon={faXmark} />
         </button>
-        <img
-          src="https://shop.raceya.fit/wp-content/uploads/2020/11/logo-placeholder.jpg"
-          alt="logo"
-          className="w-32"
-        />
+        <Link to="/">
+          <img
+            src={Logo}
+            className="w-20 m-auto"
+            alt="logo"
+          />
+        </Link>
         <ul>
           {navlinks.map((link) => (
             <li key={link.id} className="text-center py-5">

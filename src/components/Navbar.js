@@ -51,13 +51,13 @@ const Navbar = () => {
   ];
 
   return (
-    <nav style={{ height: "80px" }}>
+    <nav style={{ height: "80px" }} className="bg-neutral-900 flex flex-col justify-center">
       <Sidebar closeSidebar={closeSidebar} sidebarOpen={sidebarOpen} navlinks={navlinks} />
-      <div className="flex justify-between items-center px-5 py-2 bg-neutral-900">
+      <div className="flex justify-between items-center px-5 py-2">
         <Link to="/">
           <img
             src={Logo}
-            className="h-16"
+            className="h-8 sm:h-16"
             alt="logo"
           />
         </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
           <FontAwesomeIcon
             icon={faBars}
             onClick={openSidebar}
-            className="hover:text-blue-500 transition ease-linear duration-300 text-xl cursor-pointer"
+            className="text-white hover:text-blue-500 transition ease-linear duration-300 text-xl cursor-pointer"
           />
         </div>
         <ul className="list-none hidden sm:flex gap-2 sm:gap-5">
