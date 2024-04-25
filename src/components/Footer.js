@@ -81,8 +81,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-neutral-900 w-full">
-      {/* left section  */}
-      <div className="w-1/2 m-auto flex flex-col gap-3 lg:gap-0 lg:flex-row justify-between text-white">
+      <div className="w-4/5 2xl:w-1/2 m-auto flex flex-col gap-3 lg:gap-0 lg:flex-row justify-between text-white">
+        {/* left section  */}
         <div>
           <h2 className="text-3xl m-0 mt-4 text-center">Get in touch</h2>
           <ul className="flex flex-col gap-3 my-5">
@@ -156,7 +156,7 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <p className="mt-10">Copyright © 2024. All Rights Reserved.</p>
+          <p className="mt-10 text-center">Copyright © 2024. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

@@ -77,17 +77,21 @@ const Home = () => {
 
 const AboutSection = () => {
   const [ref, springs] = useInView(() => ({
-    from: { opacity: 0, y: 100 },
+    from: { opacity: 0, y: 80 },
     to: { opacity: 1, y: 0 },
   }));
 
   return (
-    <animated.section ref={ref} style={springs} className="w-full p-10">
-      <div className="w-full lg:w-4/5 m-auto flex flex-col lg:flex-row gap-2 md:gap-4 lg:gap-10 justify-between bg-slate-100 shadow">
-        <div className="w-full lg:w-1/2">
+    <section className="w-full p-10">
+      <animated.div
+        ref={ref}
+        style={springs}
+        className="w-full lg:w-4/5 m-auto flex flex-col 2xl:flex-row gap-2 md:gap-4 xl:gap-10 justify-between bg-slate-100 shadow"
+      >
+        <div className="w-full 2xl:w-1/2">
           <img src={WorkImg} alt="working for you" className="w-full shadow" />
         </div>
-        <div className="w-full lg:w-1/2 px-10 flex flex-col gap-y-2 lg:gap-y-0  justify-evenly">
+        <div className="w-full 2xl:w-1/2 px-10 flex flex-col gap-y-2 2xl:gap-y-0  justify-evenly">
           <h2 className="text-xl md:text-2xl lg:text-3xl">Our Mission</h2>
           <p className=" lg:text-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
@@ -104,33 +108,33 @@ const AboutSection = () => {
             in lacinia ligula fermentum. Morbi sed scelerisque lacus. Cras sit
             amet diam nec velit volutpat fermentum.
           </p>
-          <Link to="/about" className="py-3 flex justify-center">
+          <Link to="/about" className="py-3 flex justify-center 2xl:justify-start">
             <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
               Show More
             </button>
           </Link>
         </div>
-      </div>
-    </animated.section>
+      </animated.div>
+    </section>
   );
 };
 
 const MotivationalSection = () => {
   const [ref, springs] = useInView(() => ({
-    from: { opacity: 0, y: 100 },
+    from: { opacity: 0, y: 80 },
     to: { opacity: 1, y: 0 },
   }));
 
   return (
-    <animated.section
-      ref={ref}
-      style={springs}
-      className="w-full p-10 bg-slate-200"
-    >
-      <div className="w-full lg:w-4/5 m-auto flex flex-col-reverse gap-3 md:gap-4 lg:flex-row lg:gap-10 justify-between bg-slate-100 shadow">
-        <div className="w-full lg:w-1/2 px-10 flex flex-col justify-evenly">
+    <section className="w-full p-10 bg-slate-200">
+      <animated.div
+        ref={ref}
+        style={springs}
+        className="w-full lg:w-4/5 m-auto flex flex-col-reverse gap-3 md:gap-4 2xl:flex-row xl:gap-10 justify-between bg-slate-100 shadow"
+      >
+        <div className="w-full 2xl:w-1/2 px-10 flex flex-col justify-evenly">
           <h2 className="text-xl mg:text-2xl lg:text-3xl">Why choose us ?</h2>
-          <p className="py-2 md:py-4 lg:py-0 lg:text-xl">
+          <p className="py-2 md:py-4 2xl:py-0 lg:text-xl">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
             convallis sem eu elit accumsan, non sagittis ipsum vulputate. Sed
             eget dictum elit. Praesent porttitor urna in ligula posuere tempor.
@@ -146,80 +150,80 @@ const MotivationalSection = () => {
             amet diam nec velit volutpat fermentum.
           </p>
         </div>
-        <div className="w-full lg:w-1/2">
+        <div className="w-full 2xl:w-1/2">
           <img
             src={ReliableImg}
             alt="Why choose us"
             className="w-full shadow"
           />
         </div>
-      </div>
-    </animated.section>
+      </animated.div>
+    </section>
   );
 };
 
 const TechnologiesSection = () => {
   const [ref, springs] = useInView(() => ({
-    from: { opacity: 0, y: 100 },
+    from: { opacity: 0, y: 80 },
     to: { opacity: 1, y: 0 },
   }));
 
   const swiperSlides = [
     {
       id: 1,
-      name: 'HTML',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+      name: "HTML",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
     },
     {
       id: 2,
-      name: 'CSS',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+      name: "CSS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
     },
     {
       id: 3,
-      name: 'JavaScript',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+      name: "JavaScript",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
     },
     {
       id: 4,
-      name: 'MySql',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+      name: "MySql",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
     },
     {
       id: 5,
-      name: 'PHP',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+      name: "PHP",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
     },
     {
       id: 6,
-      name: 'VueJS',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
+      name: "VueJS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
     },
     {
       id: 7,
-      name: 'React',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+      name: "React",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     },
     {
       id: 8,
-      name: 'Laravel',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg',
+      name: "Laravel",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg",
     },
     {
       id: 9,
-      name: 'Bootstrap',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg',
+      name: "Bootstrap",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
     },
     {
       id: 10,
-      name: 'TailwindCSS',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
+      name: "TailwindCSS",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
     },
-  ]
+  ];
 
   return (
-    <animated.section ref={ref} style={springs} className="w-full p-10">
-      <div className="w-full lg:w-4/5 m-auto bg-slate-100 shadow py-20">
+    <section className="w-full p-10">
+      <animated.div ref={ref} style={springs} className="w-full lg:w-4/5 m-auto bg-slate-100 shadow py-20">
         <div className="pb-10">
           <h2 className="text-3xl text-center">Technologies we use</h2>
         </div>
@@ -237,7 +241,7 @@ const TechnologiesSection = () => {
               1024: {
                 slidesPerView: 4,
                 spaceBetween: 30,
-              }
+              },
             }}
             loop={true}
             autoplay={{
@@ -248,31 +252,37 @@ const TechnologiesSection = () => {
             modules={[FreeMode, Autoplay]}
             className="mySwiper"
           >
-            {
-              swiperSlides.map((el) => (
-                <SwiperSlide key={el.id}>
-                  <img className="w-32 lg:w-60 lg:drop-shadow-xl" src={el.icon} alt={el.name} />
-                </SwiperSlide>
-              ))
-            }
+            {swiperSlides.map((el) => (
+              <SwiperSlide key={el.id}>
+                <img
+                  className="w-32 lg:w-60 lg:drop-shadow-xl"
+                  src={el.icon}
+                  alt={el.name}
+                />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
-      </div>
-    </animated.section>
+      </animated.div>
+    </section>
   );
 };
 
 const FormSection = ({ openPopup }) => {
   const [ref, springs] = useInView(() => ({
-    from: { opacity: 0, y: 100 },
+    from: { opacity: 0, y: 80 },
     to: { opacity: 1, y: 0 },
   }));
 
   return (
-    <animated.section ref={ref} style={springs} className="w-full bg-slate-200 p-10">
-      <div className="w-full lg:w-4/5 m-auto bg-slate-100 pb-10 px-8 shadow">
+    <section
+      className="w-full bg-slate-200 p-10"
+    >
+      <animated.div ref={ref} style={springs} className="w-full lg:w-4/5 m-auto bg-slate-100 pb-10 px-8 shadow">
         <div className="py-5 lg:py-10">
-          <h2 className="md:text-2xl lg:text-3xl text-center">Complete the form or contact us</h2>
+          <h2 className="md:text-2xl lg:text-3xl text-center">
+            Complete the form or contact us
+          </h2>
         </div>
         <div className="w-full flex flex-col lg:flex-row justify-between">
           <Form openPopup={openPopup} />
@@ -297,8 +307,8 @@ const FormSection = ({ openPopup }) => {
             </div>
           </div>
         </div>
-      </div>
-    </animated.section>
+      </animated.div>
+    </section>
   );
 };
 
