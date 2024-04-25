@@ -5,6 +5,17 @@ import { Link } from "react-router-dom";
 // react-spring imports
 import { useInView, animated } from "@react-spring/web";
 
+// swiper imports
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// swiper dependencies imports
+import { FreeMode, Autoplay } from "swiper/modules";
+
+// swiper styles
+
+import "swiper/css";
+import "swiper/css/free-mode";
+
 // components imports
 import Hero from "../components/Hero";
 import Form from "../components/Form";
@@ -41,6 +52,8 @@ const Home = () => {
       <AboutSection />
       {/* motivational section */}
       <MotivationalSection />
+      {/* technologies section */}
+      <TechnologiesSection />
       {/* form section */}
       <FormSection openPopup={openPopup} />
       {/* popup */}
@@ -109,7 +122,11 @@ const MotivationalSection = () => {
   }));
 
   return (
-    <animated.section ref={ref} style={springs} className="w-full p-10">
+    <animated.section
+      ref={ref}
+      style={springs}
+      className="w-full p-10 bg-slate-200"
+    >
       <div className="w-full sm:w-4/5 m-auto flex flex-col-reverse gap-3 sm:flex-row sm:gap-10 justify-between bg-slate-100 shadow">
         <div className="w-full sm:w-1/2 px-10 flex flex-col justify-evenly">
           <h2 className="text-xl sm:text-3xl">Why choose us ?</h2>
@@ -141,6 +158,98 @@ const MotivationalSection = () => {
   );
 };
 
+const TechnologiesSection = () => {
+  const [ref, springs] = useInView(() => ({
+    from: { opacity: 0, y: 100 },
+    to: { opacity: 1, y: 0 },
+  }));
+
+  const swiperSlides = [
+    {
+      id: 1,
+      name: 'HTML',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+    },
+    {
+      id: 2,
+      name: 'CSS',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+    },
+    {
+      id: 3,
+      name: 'JavaScript',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+    },
+    {
+      id: 4,
+      name: 'MySql',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+    },
+    {
+      id: 5,
+      name: 'PHP',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
+    },
+    {
+      id: 6,
+      name: 'VueJS',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
+    },
+    {
+      id: 7,
+      name: 'React',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+    },
+    {
+      id: 8,
+      name: 'Laravel',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg',
+    },
+    {
+      id: 9,
+      name: 'Bootstrap',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg',
+    },
+    {
+      id: 10,
+      name: 'TailwindCSS',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg',
+    },
+  ]
+
+  return (
+    <animated.section ref={ref} style={springs} className="w-full p-10">
+      <div className="w-4/5 m-auto bg-slate-100 shadow py-20">
+        <div className="pb-10">
+          <h2 className="text-3xl text-center">Technologies we use</h2>
+        </div>
+        <div className="w-4/5 m-auto pt-10">
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={80}
+            loop={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            freeMode={true}
+            modules={[FreeMode, Autoplay]}
+            className="mySwiper"
+          >
+            {
+              swiperSlides.map((el) => (
+                <SwiperSlide key={el.id}>
+                  <img className="w-60" src={el.icon} alt={el.name} />
+                </SwiperSlide>
+              ))
+            }
+          </Swiper>
+        </div>
+      </div>
+    </animated.section>
+  );
+};
+
 const FormSection = ({ openPopup }) => {
   const [ref, springs] = useInView(() => ({
     from: { opacity: 0, y: 100 },
@@ -148,10 +257,10 @@ const FormSection = ({ openPopup }) => {
   }));
 
   return (
-    <animated.section ref={ref} style={springs} className="w-full p-10">
+    <animated.section ref={ref} style={springs} className="w-full bg-slate-200 p-10">
       <div className="w-full sm:w-4/5 m-auto bg-slate-100 pb-10 px-8 shadow">
         <div className="py-5 sm:py-10">
-          <h2 className=" sm:text-3xl">Complete the form or contact us</h2>
+          <h2 className=" sm:text-3xl text-center">Complete the form or contact us</h2>
         </div>
         <div className="w-full flex flex-col sm:flex-row justify-between">
           <Form openPopup={openPopup} />
