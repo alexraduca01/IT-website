@@ -82,7 +82,7 @@ const Footer = () => {
   return (
     <footer className="bg-neutral-900 w-full">
       {/* left section  */}
-      <div className="w-1/2 m-auto flex flex-col gap-3 sm:gap-0 sm:flex-row justify-between text-white">
+      <div className="w-1/2 m-auto flex flex-col gap-3 lg:gap-0 lg:flex-row justify-between text-white">
         <div>
           <h2 className="text-3xl m-0 mt-4 text-center">Get in touch</h2>
           <ul className="flex flex-col gap-3 my-5">
@@ -136,7 +136,7 @@ const Footer = () => {
           </div>
         </div>
         {/* right section  */}
-        <div className="flex flex-col mb-3 sm:mb-0">
+        <div className="flex flex-col mb-3 lg:mb-0">
           <h2 className="text-3xl m-0 mt-4 text-center">Quick Links</h2>
           <ul className="my-5 flex flex-col gap-5">
             {footerlinks.map((el) => (

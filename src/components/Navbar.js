@@ -65,14 +65,14 @@ const Navbar = () => {
             alt="logo"
           />
         </Link>
-        <div className="sm:hidden">
+        <div className="lg:hidden">
           <FontAwesomeIcon
             icon={faBars}
             onClick={openSidebar}
             className="text-white hover:text-blue-500 transition ease-linear duration-300 text-xl cursor-pointer"
           />
         </div>
-        <ul className="list-none hidden sm:flex gap-2 sm:gap-5">
+        <ul className="list-none hidden lg:flex gap-2 sm:gap-5">
           {navlinks.map((link) => (
             <li key={link.id}>
               <Link
