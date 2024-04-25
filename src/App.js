@@ -1,15 +1,16 @@
-// import vari
+// react imports
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-// componenti
+// components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
-// pagine
+// pages
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
 import Team from "./pages/Team";
+import Portfolio from "./pages/Portfolio";
 import ErrorPage from "./pages/ErrorPage";
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/portfolio" element={<Portfolio />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />

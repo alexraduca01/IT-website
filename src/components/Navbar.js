@@ -1,6 +1,8 @@
 // react imports
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+// fontawesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,13 +13,10 @@ import Sidebar from "./Sidebar";
 import Logo from "../assets/images/logo.png";
 
 const Navbar = () => {
-  const [active, setActive] = useState("/");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  // function that sets the active link
-  const handleActive = (url) => {
-    setActive(url);
-  };
+  let location = useLocation();
+  
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const openSidebar = () => {
     setSidebarOpen(true);
@@ -48,6 +47,11 @@ const Navbar = () => {
       name: "Our Team",
       url: "/team",
     },
+    {
+      id: 5,
+      name: "Portfolio",
+      url: "/portfolio",
+    },
   ];
 
   return (
@@ -74,9 +78,8 @@ const Navbar = () => {
               <Link
                 to={link.url}
                 className={`text-sm sm:text-xl  transition ease-linear hover:text-blue-500 duration-300 ${
-                  active === link.url ? "text-blue-500" : "text-white"
+                  link.url === location.pathname ? "text-blue-500" : "text-white"
                 } `}
-                onClick={() => handleActive(link.url)}
               >
                 {link.name}
               </Link>
