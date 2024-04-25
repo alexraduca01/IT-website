@@ -1,6 +1,8 @@
 // react imports
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+// fontawesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
@@ -8,6 +10,9 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Logo from "../assets/images/logo.png";
 
 const Sidebar = ({ navlinks, closeSidebar, sidebarOpen }) => {
+
+  const location = useLocation();
+
   return (
     <aside
       className={`flex h-screen absolute top-0 left-0 bg-stone-50 flex-col items-center justify-center gap-3 z-20 ${
@@ -34,7 +39,7 @@ const Sidebar = ({ navlinks, closeSidebar, sidebarOpen }) => {
             <li key={link.id} className="text-center py-5">
               <Link
                 to={link.url}
-                className="text-xl transition ease-linear hover:text-blue-500 duration-300"
+                className={`text-xl transition ease-linear hover:text-blue-500 duration-300 ${link.url === location.pathname ? 'text-blue-500' : 'text-black'}`}
                 onClick={() => {
                   closeSidebar();
                 }}
