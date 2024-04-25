@@ -81,6 +81,13 @@ const AboutSection = () => {
     to: { opacity: 1, y: 0 },
   }));
 
+  const scrollTo = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="w-full p-10">
       <animated.div
@@ -94,21 +101,23 @@ const AboutSection = () => {
         <div className="w-full 2xl:w-1/2 px-10 flex flex-col gap-y-2 2xl:gap-y-0  justify-evenly">
           <h2 className="text-xl md:text-2xl lg:text-3xl">Our Mission</h2>
           <p className=" lg:text-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            convallis sem eu elit accumsan, non sagittis ipsum vulputate. Sed
-            eget dictum elit. Praesent porttitor urna in ligula posuere tempor.
-            Nam semper est ac arcu vestibulum, quis luctus nisi commodo. Nulla
-            eget aliquam est. Morbi rhoncus risus vel ipsum viverra eleifend.
-            Nullam varius sapien nec augue fermentum, a fringilla metus posuere.
-            Vivamus eu aliquet turpis. Integer tristique vestibulum mi, id
-            gravida purus lobortis vel. Sed pharetra, ipsum a pellentesque
-            finibus, purus quam laoreet justo, ut ultrices turpis ante non mi.
-            Suspendisse potenti. Duis consectetur nisl et quam laoreet, sed
-            posuere ligula posuere. Aenean fermentum risus quis metus convallis,
-            in lacinia ligula fermentum. Morbi sed scelerisque lacus. Cras sit
-            amet diam nec velit volutpat fermentum.
+            IT Website, your go-to for IT solutions. We specialize in website
+            development, printing services, and PC sales/repairs. With a focus
+            on innovation and customer satisfaction, our expert team delivers
+            tailored solutions to elevate your digital presence.{" "}
+            <span
+              onClick={() => scrollTo("contactForm")}
+              className="cursor-pointer text-blue-500 underline"
+              style={{ scrollBehavior: "smooth" }}
+            >
+              Contact us
+            </span>{" "}
+            today to unlock the power of technology for your success.
           </p>
-          <Link to="/about" className="py-3 flex justify-center 2xl:justify-start">
+          <Link
+            to="/about"
+            className="py-3 lg:py-5 flex justify-center 2xl:justify-start"
+          >
             <button className="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
               Show More
             </button>
@@ -134,21 +143,35 @@ const MotivationalSection = () => {
       >
         <div className="w-full 2xl:w-1/2 px-10 flex flex-col justify-evenly">
           <h2 className="text-xl mg:text-2xl lg:text-3xl">Why choose us ?</h2>
-          <p className="py-2 md:py-4 2xl:py-0 lg:text-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            convallis sem eu elit accumsan, non sagittis ipsum vulputate. Sed
-            eget dictum elit. Praesent porttitor urna in ligula posuere tempor.
-            Nam semper est ac arcu vestibulum, quis luctus nisi commodo. Nulla
-            eget aliquam est. Morbi rhoncus risus vel ipsum viverra eleifend.
-            Nullam varius sapien nec augue fermentum, a fringilla metus posuere.
-            Vivamus eu aliquet turpis. Integer tristique vestibulum mi, id
-            gravida purus lobortis vel. Sed pharetra, ipsum a pellentesque
-            finibus, purus quam laoreet justo, ut ultrices turpis ante non mi.
-            Suspendisse potenti. Duis consectetur nisl et quam laoreet, sed
-            posuere ligula posuere. Aenean fermentum risus quis metus convallis,
-            in lacinia ligula fermentum. Morbi sed scelerisque lacus. Cras sit
-            amet diam nec velit volutpat fermentum.
-          </p>
+          <div>
+            <ol className="py-2 md:py-4 2xl:py-0 lg:text-xl list-decimal px-5">
+              <li>
+                <strong>Expertise:</strong> <br/> Benefit from our experienced
+                professionals.
+              </li>
+              <li>
+                <strong>Comprehensive Solutions:</strong> <br/> Benefit from our
+                experienced professionals.
+              </li>
+              <li>
+                <strong>Quality Assurance:</strong> <br/> Benefit from our experienced
+                professionals.
+              </li>
+              <li>
+                <strong>Customer-Centric Approach:</strong> <br/> Benefit from our
+                experienced professionals.
+              </li>
+              <li>
+                <strong>Reliability:</strong> <br/> Benefit from our experienced
+                professionals.
+              </li>
+              <li>
+                <strong>Commitment to Excellence:</strong> <br/> Benefit from our
+                experienced professionals.
+              </li>
+            </ol>
+            <p className="py-2 md:py-4 2xl:py-4 lg:text-xl">Choose IT Website for expertise, comprehensive solutions, and exceptional service.</p>
+          </div>
         </div>
         <div className="w-full 2xl:w-1/2">
           <img
@@ -223,7 +246,11 @@ const TechnologiesSection = () => {
 
   return (
     <section className="w-full p-10">
-      <animated.div ref={ref} style={springs} className="w-full lg:w-4/5 m-auto bg-slate-100 shadow py-20">
+      <animated.div
+        ref={ref}
+        style={springs}
+        className="w-full lg:w-4/5 m-auto bg-slate-100 shadow py-20"
+      >
         <div className="pb-10">
           <h2 className="text-3xl text-center">Technologies we use</h2>
         </div>
@@ -275,10 +302,12 @@ const FormSection = ({ openPopup }) => {
   }));
 
   return (
-    <section
-      className="w-full bg-slate-200 p-10"
-    >
-      <animated.div ref={ref} style={springs} className="w-full lg:w-4/5 m-auto bg-slate-100 pb-10 px-8 shadow">
+    <section className="w-full bg-slate-200 p-10">
+      <animated.div
+        ref={ref}
+        style={springs}
+        className="w-full lg:w-4/5 m-auto bg-slate-100 pb-10 px-8 shadow"
+      >
         <div className="py-5 lg:py-10">
           <h2 className="md:text-2xl lg:text-3xl text-center">
             Complete the form or contact us
