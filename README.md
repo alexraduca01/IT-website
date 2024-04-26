@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# IT Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This is a React project for the website of an IT company. The website provides information about the company, its services and projects.
 
-## Available Scripts
+## Technologies Used
+- React.js: JavaScript library for building the user interface.
+- Swiper: Library for implementing carousels.
+- React Spring: Library for creating smooth and interactive animations.
+- React Router: Library for managing routes in a single-page React application (SPA).
+- EmailJS: Service for sending emails directly from client-side JavaScript.
 
-In the project directory, you can run:
+## Installation
+Make sure you have Node.js and npm installed on your machine.
+1. Clone this repository to your computer.
+2. Navigate to the project folder via the terminal.
+3. Run the command `npm install` to install the dependencies.
+4. Run the command `npm start` to start the application in development mode.
 
-### `npm start`
+## Using the Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Swiper
+The `Hero.js` and `Home.js` components use the Swiper library to display carousels of technologies and service images. You can customize carousel settings by modifying the file.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### React Spring
+Animations are implemented using React Spring in the `Home.js` component. You can add new animations or modify existing ones to create a more engaging user experience.
 
-### `npm test`
+### React Router
+Routing is managed through React Router to allow navigation between different pages of the application. Pages are organized in the `pages` folder and imported into the `App.js` file. You can add new pages or modify existing ones as needed for the project.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### EmailJS
+EmailJS is integrated to enable sending emails directly from the client-side JavaScript. You can configure email templates and recipients according to your requirements.
