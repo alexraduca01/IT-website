@@ -32,25 +32,21 @@ const Navbar = () => {
       name: "Home",
       url: "/",
     },
+    
     {
       id: 2,
-      name: "About Us",
-      url: "/about",
-    },
-    {
-      id: 3,
       name: "Our Products",
       url: "/products",
     },
     {
-      id: 4,
-      name: "Our Team",
-      url: "/team",
-    },
-    {
-      id: 5,
+      id: 3,
       name: "Portfolio",
       url: "/portfolio",
+    },
+    {
+      id: 4,
+      name: "About Us",
+      url: "/about",
     },
   ];
 

@@ -9,7 +9,6 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Products from "./pages/Products";
-import Team from "./pages/Team";
 import Portfolio from "./pages/Portfolio";
 import ErrorPage from "./pages/ErrorPage";
 
@@ -24,7 +23,6 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/team" element={<Team />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
