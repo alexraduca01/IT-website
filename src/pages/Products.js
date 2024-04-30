@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faCartShopping, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 // api urls
-const url = "https://fakestoreapi.com/products?limit=12";
+const url = "https://fakestoreapi.com/products";
 
 const Products = () => {
 
@@ -18,10 +18,18 @@ const Products = () => {
   const [filteredData, setFilteredData] = useState(data);
   // console.log(data);
 
-  const handleInput = () => {
+  const handleButton = () => {
     const searchText = ref.current.value.toLowerCase();
     const filtered = data.filter((el) => el.title.toLowerCase().includes(searchText));
     setFilteredData(filtered);
+  }
+
+  const handleInput = (e) => {
+    if(e.charCode === 13){
+      const searchText = ref.current.value.toLowerCase();
+      const filtered = data.filter((el) => el.title.toLowerCase().includes(searchText));
+      setFilteredData(filtered);
+    }
   }
 
   useEffect(() => {
@@ -40,8 +48,9 @@ const Products = () => {
             name="first_name"
             placeholder="Search..."
             className='bg-gray-50 border text-sm rounded-full block h-full w-full p-2.5 placeholder-gray-400'
+            onKeyDown={handleInput}
           />
-          <button className="absolute top-0 right-0 z-10 bg-gray-500 bg-opacity-10 rounded-full size-10" onClick={handleInput}>
+          <button className="absolute top-0 right-0 z-10 bg-gray-500 bg-opacity-10 rounded-full size-10" onClick={handleButton}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
         </form>
