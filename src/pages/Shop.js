@@ -1,7 +1,7 @@
 // react imports
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef} from "react";
 
-// custom hooks imports
+// custom hooks import
 import useFetch from "../utils/useFetch";
 
 // fontawesome imports
@@ -11,8 +11,7 @@ import { faHeart, faCartShopping, faMagnifyingGlass } from "@fortawesome/free-so
 // api urls
 const url = "https://fakestoreapi.com/products";
 
-const Products = () => {
-
+const Shop = () => {
   const ref = useRef(null);
   const { data, isLoading } = useFetch(url);
   const [filteredData, setFilteredData] = useState(data);
@@ -94,4 +93,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default Shop;

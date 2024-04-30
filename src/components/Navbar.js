@@ -35,8 +35,8 @@ const Navbar = () => {
     
     {
       id: 2,
-      name: "Our Products",
-      url: "/products",
+      name: "Shop",
+      url: "/shop",
     },
     {
       id: 3,
