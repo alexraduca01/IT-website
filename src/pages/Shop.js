@@ -73,7 +73,7 @@ const Shop = () => {
           </button>
         </form>
         <div className="w-full bg-slate-100 my-5 py-5">
-          <div className="w-4/5 m-auto grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+          <div className="w-4/5 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {filteredData.map((el) => (
               <div key={el.id} className="p-2 bg-white relative">
                 <Product {...el} />
