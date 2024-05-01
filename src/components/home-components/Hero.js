@@ -3,9 +3,9 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // images imports
-import HardwareImg from "../assets/images/hardware.jpg";
-import PrinterImg from "../assets/images/printer.jpg";
-import WebDevImg from "../assets/images/webdev.png";
+import HardwareImg from "../../assets/images/hardware.jpg";
+import PrinterImg from "../../assets/images/printer.jpg";
+import WebDevImg from "../../assets/images/webdev.png";
 
 // swiper dependencies imports
 import "swiper/css";

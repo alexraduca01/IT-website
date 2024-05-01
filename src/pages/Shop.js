@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 // components imports
-import Product from "../components/Product";
+import Product from "../components/shop-components/Product";
 
 // api urls
 const url = "https://fakestoreapi.com/products";
@@ -45,7 +45,7 @@ const Shop = () => {
   return (
     <>
       <section className="w-full">
-        <h1 className="text-3xl text-center py-5">Discover Our Products</h1>
+        <h1 className="text-3xl text-center py-5 xl:py-10">Take a look at our shop!</h1>
         <form
           className="w-4/5 m-auto relative"
           onSubmit={(e) => {

@@ -17,8 +17,8 @@ import "swiper/css";
 import "swiper/css/free-mode";
 
 // components imports
-import Hero from "../components/Hero";
-import Form from "../components/Form";
+import Hero from "../components/home-components/Hero";
+import Form from "../components/home-components/Form";
 
 // images imports
 import WorkImg from "../assets/images/work.jpg";
