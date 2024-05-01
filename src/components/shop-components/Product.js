@@ -22,7 +22,7 @@ const Product = (props) => {
           <h2 className="sm:text-base cursor-pointer">
             {title.substr(0, 20)}
           </h2>
-          <p className="sm:text-base cursor-pointer">{price}€</p>
+          <p className="sm:text-base cursor-pointer">{price.toFixed(2)}€</p>
         </div>
         <div className="relative">
           <button

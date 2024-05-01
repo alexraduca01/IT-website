@@ -14,6 +14,7 @@ import Shop from "./pages/Shop";
 import Portfolio from "./pages/Portfolio";
 import ErrorPage from "./pages/ErrorPage";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/shop" element={<Shop />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
