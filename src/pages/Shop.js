@@ -1,8 +1,9 @@
 // react imports
 import React, { useEffect, useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 // custom hooks imports
-import useFetch from "../utils/useFetch";
+// import useFetch from "../utils/useFetch";
 
 // fontawesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,18 +12,20 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 // components imports
 import Product from "../components/shop-components/Product";
 
+import { PRODUCTS } from "../data/Products"; 
+
 // api urls
-const url = "https://fakestoreapi.com/products";
+// const url = "https://fakestoreapi.com/products";
 
 const Shop = () => {
   const ref = useRef(null);
-  const { data, isLoading } = useFetch(url);
-  const [filteredData, setFilteredData] = useState(data);
+  // const { data, isLoading } = useFetch(url);
+  const [filteredData, setFilteredData] = useState(PRODUCTS);
   // console.log(data);
 
   const handleButton = () => {
     const searchText = ref.current.value.toLowerCase();
-    const filtered = data.filter((el) =>
+    const filtered = PRODUCTS.filter((el) =>
       el.title.toLowerCase().includes(searchText)
     );
     setFilteredData(filtered);
@@ -31,7 +34,7 @@ const Shop = () => {
   const handleInput = (e) => {
     if (e.charCode === 13) {
       const searchText = ref.current.value.toLowerCase();
-      const filtered = data.filter((el) =>
+      const filtered = PRODUCTS.filter((el) =>
         el.title.toLowerCase().includes(searchText)
       );
       setFilteredData(filtered);
@@ -39,13 +42,14 @@ const Shop = () => {
   };
 
   useEffect(() => {
-    setFilteredData(data);
-  }, [data]);
+    setFilteredData(PRODUCTS);
+  }, [PRODUCTS]);
 
   return (
     <>
       <section className="w-full">
         <h1 className="text-3xl text-center py-5 xl:py-10">Take a look at our shop!</h1>
+        <Link to="/cart">Cart</Link>
         <form
           className="w-4/5 m-auto relative"
           onSubmit={(e) => {

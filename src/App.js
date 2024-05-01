@@ -1,6 +1,8 @@
 // react imports
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import { ShopContextProvider } from "./context/shop-context";
+
 // components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -11,9 +13,11 @@ import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Portfolio from "./pages/Portfolio";
 import ErrorPage from "./pages/ErrorPage";
+import Cart from "./components/Cart";
 
 const App = () => {
   return (
+    <ShopContextProvider>
       <Router className="App">
         <div className="bg-stone-100">
           <header>
@@ -24,11 +28,13 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/cart" element={<Cart />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
           <Footer />
         </div>
       </Router>
+    </ShopContextProvider>
   );
 };
 

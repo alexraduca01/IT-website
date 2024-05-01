@@ -1,13 +1,17 @@
 // react imports
-import React from "react";
+import React, { useContext } from "react";
+
+import { ShopContext } from "../../context/shop-context";
 
 // fontawesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Product = (props) => {
-
   const { id, image, title, price } = props;
+  const { addToCart, cartItems } = useContext(ShopContext);
+
+  const cartItemAmount = cartItems[id];
 
   return (
     <>
@@ -28,9 +32,11 @@ const Product = (props) => {
             {title.substr(0, 20)}
           </h2>
           <p className="text-xs sm:text-base cursor-pointer">{price}€</p>
+          <p>{cartItemAmount > 0 ? `In cart: ${cartItemAmount}` : ''}</p>
         </div>
         <div className="bg-white rounded-full size-7 border text-center leading-7">
           <FontAwesomeIcon
+            onClick={() => addToCart(id)}
             icon={faCartShopping}
             className="cursor-pointer text-gray-500 hover:text-green-500 transition duration-300 ease-linear size-4"
           />
