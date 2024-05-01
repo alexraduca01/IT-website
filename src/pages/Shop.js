@@ -1,27 +1,26 @@
 // react imports
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 
-// custom hooks imports
-// import useFetch from "../utils/useFetch";
+// context imports
+import { ShopContext } from "../context/shop-context";
 
 // fontawesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMagnifyingGlass,
+  faCartShopping,
+} from "@fortawesome/free-solid-svg-icons";
 
 // components imports
 import Product from "../components/shop-components/Product";
-
-import { PRODUCTS } from "../data/Products"; 
-
-// api urls
-// const url = "https://fakestoreapi.com/products";
+import { PRODUCTS } from "../data/Products";
 
 const Shop = () => {
   const ref = useRef(null);
-  // const { data, isLoading } = useFetch(url);
   const [filteredData, setFilteredData] = useState(PRODUCTS);
-  // console.log(data);
+  const {getTotalItems} = useContext(ShopContext);
+  const totalItemsInCart = getTotalItems();
 
   const handleButton = () => {
     const searchText = ref.current.value.toLowerCase();
@@ -48,8 +47,19 @@ const Shop = () => {
   return (
     <>
       <section className="w-full">
-        <h1 className="text-3xl text-center py-5 xl:py-10">Take a look at our shop!</h1>
-        <Link to="/cart">Cart</Link>
+        <h1 className="text-3xl text-center py-5 xl:py-10">
+          Take a look at our shop!
+        </h1>
+        <div className="size-10 bg-white shadow flex justify-center items-center rounded-xl fixed bottom-5 right-1 z-30 text-green-600 hover:text-green-400 transition ease-linear duration-300">
+          <Link to="/cart">
+            <FontAwesomeIcon icon={faCartShopping} />
+            {totalItemsInCart > 0 ? (
+            <p className="absolute -top-2 right-0 size-5 rounded-full bg-red-500 text-white leading-5 text-xs text-center">{totalItemsInCart}</p>
+          ) : (
+            ""
+          )}
+          </Link>
+        </div>
         <form
           className="w-4/5 m-auto relative"
           onSubmit={(e) => {
