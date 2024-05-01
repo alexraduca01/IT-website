@@ -1,4 +1,7 @@
+// react imports
 import React, { useContext} from 'react'
+
+// context imports
 import { ShopContext } from '../../context/shop-context';
 
 const CartItem = (props) => {

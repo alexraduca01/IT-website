@@ -13,7 +13,7 @@ import About from "./pages/About";
 import Shop from "./pages/Shop";
 import Portfolio from "./pages/Portfolio";
 import ErrorPage from "./pages/ErrorPage";
-import Cart from "./components/Cart";
+import Cart from "./pages/Cart";
 
 const App = () => {
   return (

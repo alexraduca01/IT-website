@@ -1,8 +1,13 @@
+// react imports
 import React, { useContext } from "react";
+
+// components imports
 import { PRODUCTS } from "../data/Products";
-import { Product } from "../components/shop-components/Product";
-import { ShopContext } from "../context/shop-context";
 import CartItem from "../components/shop-components/CartItem";
+
+// context import
+import { ShopContext } from "../context/shop-context";
+
 
 const Cart = () => {
   const { cartItems, getSubtotal } = useContext(ShopContext);

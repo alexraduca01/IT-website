@@ -1,4 +1,7 @@
+// react imports
 import React, { createContext, useState } from "react";
+
+// data imports
 import {PRODUCTS} from "../data/Products";
 
 export const ShopContext = createContext(null);
