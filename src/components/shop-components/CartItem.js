@@ -15,13 +15,13 @@ const CartItem = (props) => {
     useContext(ShopContext);
 
   return (
-    <div className="flex gap-3 p-2 my-5 rounded-md shadow-lg bg-stone-200">
+    <div className="flex w-full sm:w-96 gap-3 p-2 my-5 rounded-md shadow-lg bg-stone-200">
       <div>
         <img className="size-20" src={image} alt={title} />
       </div>
       <div className="flex flex-col justify-between">
         <p>{title.substr(0, 20)}</p>
-        <p>{price}€</p>
+        <p>{price.toFixed(2)}€</p>
         <div className="flex">
           <button className="size-6 bg-red-500 hover:bg-red-400 text-white flex justify-center items-center" onClick={() => removeFromCart(id)}><FontAwesomeIcon icon={faMinus} className="text-sm"/></button>
           <input
