@@ -51,7 +51,7 @@ const Shop = () => {
           Take a look at our shop!
         </h1>
         <div className="size-10 bg-white shadow flex justify-center items-center rounded-xl fixed bottom-5 right-1 sm:right-3 z-30 text-green-600 hover:text-green-400 transition ease-linear duration-300">
-          <Link to="/cart">
+          <Link to="/cart" onClick={() => window.scrollTo(0, 0)}>
             <FontAwesomeIcon icon={faCartShopping} />
             {totalItemsInCart > 0 ? (
               <p className="absolute -top-2 right-0 size-5 rounded-full bg-red-500 text-white leading-5 text-xs text-center">

@@ -15,7 +15,7 @@ const CartItem = (props) => {
     useContext(ShopContext);
 
   return (
-    <div className="flex w-full sm:w-96 gap-3 p-2 my-5 rounded-md shadow-lg bg-stone-200 relative">
+    <div className="flex w-full sm:w-96 gap-3 p-2 my-5 rounded-md shadow-lg bg-white relative">
       <div>
         <img className="size-20" src={image} alt={title} />
       </div>

@@ -15,7 +15,7 @@ const Product = (props) => {
       <img
         src={image}
         alt={title}
-        className="aspect-square cursor-pointer w-full"
+        className="aspect-square cursor-pointer w-4/5 m-auto"
       />
       <div className="flex justify-between items-center py-3">
         <div>
