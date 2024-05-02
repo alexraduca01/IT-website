@@ -19,7 +19,7 @@ import { PRODUCTS } from "../data/Products";
 const Shop = () => {
   const ref = useRef(null);
   const [filteredData, setFilteredData] = useState(PRODUCTS);
-  const {getTotalItems} = useContext(ShopContext);
+  const { getTotalItems } = useContext(ShopContext);
   const totalItemsInCart = getTotalItems();
 
   const handleButton = () => {
@@ -50,14 +50,16 @@ const Shop = () => {
         <h1 className="text-3xl text-center py-5 xl:py-10">
           Take a look at our shop!
         </h1>
-        <div className="size-10 bg-white shadow flex justify-center items-center rounded-xl fixed bottom-5 right-1 z-30 text-green-600 hover:text-green-400 transition ease-linear duration-300">
+        <div className="size-10 bg-white shadow flex justify-center items-center rounded-xl fixed bottom-5 right-1 sm:right-3 z-30 text-green-600 hover:text-green-400 transition ease-linear duration-300">
           <Link to="/cart">
             <FontAwesomeIcon icon={faCartShopping} />
             {totalItemsInCart > 0 ? (
-            <p className="absolute -top-2 right-0 size-5 rounded-full bg-red-500 text-white leading-5 text-xs text-center">{totalItemsInCart}</p>
-          ) : (
-            ""
-          )}
+              <p className="absolute -top-2 right-0 size-5 rounded-full bg-red-500 text-white leading-5 text-xs text-center">
+                {totalItemsInCart}
+              </p>
+            ) : (
+              ""
+            )}
           </Link>
         </div>
         <form
@@ -82,14 +84,18 @@ const Shop = () => {
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
         </form>
-        <div className="w-full bg-slate-100 my-5 py-5">
-          <div className="w-4/5 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {filteredData.map((el) => (
-              <div key={el.id} className="p-2 bg-white relative">
-                <Product {...el} />
-              </div>
-            ))}
-          </div>
+        <div className="w-full bg-slate-200 mt-5 py-5 min-height-fix">
+          {filteredData.length > 0 ? (
+            <div className="w-4/5 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+              {filteredData.map((el) => (
+                <div key={el.id} className="p-2 bg-white shadow-md">
+                  <Product {...el} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center text-3xl py-5">Sadly no corresponding products were found :(</p>
+          )}
         </div>
       </section>
     </>
