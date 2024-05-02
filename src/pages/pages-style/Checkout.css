@@ -1,0 +1,27 @@
+.check-container {
+  border: 1.2px solid rgb(34, 197, 94);
+  border-radius: 50%;
+  animation: check 2s forwards;
+}
+
+@keyframes check {
+  0% {
+    opacity: 0;
+    font-size: 0;
+  }
+  25% {
+    opacity: 0.4;
+    font-size: 1rem;
+  }
+  50% {
+    opacity: 0.6;
+    font-size: 3rem;
+  }
+  75% {
+    opacity: 1;
+    font-size: 3.5rem;
+  }
+  100% {
+    font-size: 3rem;
+  }
+}

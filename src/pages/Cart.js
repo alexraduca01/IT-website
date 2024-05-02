@@ -3,8 +3,10 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 // components imports
-import { PRODUCTS } from "../data/Products";
 import CartItem from "../components/shop-components/CartItem";
+
+// data imports
+import { PRODUCTS } from "../data/Products";
 
 // context import
 import { ShopContext } from "../context/shop-context";
@@ -19,9 +21,9 @@ const Cart = () => {
         <h1 className="text-center text-3xl pb-2">Your Cart</h1>
         {/* cart items  */}
         <div className="flex flex-col justify-center items-center">
-          {PRODUCTS.map((product) => {
-            if (cartItems[product.id] !== 0) {
-              return <CartItem {...product} />;
+          {PRODUCTS.map((el) => {
+            if (cartItems[el.id] !== 0) {
+              return <CartItem {...el} />;
             }
           })}
         </div>
