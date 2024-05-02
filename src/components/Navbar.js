@@ -13,9 +13,8 @@ import Sidebar from "./Sidebar";
 import Logo from "../assets/images/logo.png";
 
 const Navbar = () => {
-
   let location = useLocation();
-  
+
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const openSidebar = () => {
@@ -32,7 +31,7 @@ const Navbar = () => {
       name: "Home",
       url: "/",
     },
-    
+
     {
       id: 2,
       name: "Shop",
@@ -51,15 +50,18 @@ const Navbar = () => {
   ];
 
   return (
-    <nav style={{ height: "80px" }} className="bg-neutral-900 flex flex-col justify-center">
-      <Sidebar closeSidebar={closeSidebar} sidebarOpen={sidebarOpen} navlinks={navlinks} />
+    <nav
+      style={{ height: "80px" }}
+      className="bg-neutral-900 flex flex-col justify-center"
+    >
+      <Sidebar
+        closeSidebar={closeSidebar}
+        sidebarOpen={sidebarOpen}
+        navlinks={navlinks}
+      />
       <div className="flex justify-between items-center px-5 py-2">
         <Link to="/">
-          <img
-            src={Logo}
-            className="h-8 sm:h-16"
-            alt="logo"
-          />
+          <img src={Logo} className="h-8 sm:h-16" alt="logo" />
         </Link>
         <div className="lg:hidden">
           <FontAwesomeIcon
@@ -74,7 +76,9 @@ const Navbar = () => {
               <Link
                 to={link.url}
                 className={`text-sm sm:text-xl  transition ease-linear hover:text-blue-500 duration-300 ${
-                  link.url === location.pathname ? "text-blue-500" : "text-white"
+                  link.url === location.pathname
+                    ? "text-blue-500"
+                    : "text-white"
                 } `}
               >
                 {link.name}

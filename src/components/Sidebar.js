@@ -15,7 +15,7 @@ const Sidebar = ({ navlinks, closeSidebar, sidebarOpen }) => {
 
   return (
     <aside
-      className={`flex h-screen absolute top-0 left-0 bg-stone-50 flex-col items-center justify-center gap-3 z-20 ${
+      className={`flex h-screen fixed top-0 left-0 bg-stone-50 flex-col items-center justify-center gap-3 z-50 ${
         sidebarOpen ? "w-full p-2" : "w-0 p-0"
       }`}
       style={{ transition: "width 0.3s linear" }}
@@ -38,10 +38,12 @@ const Sidebar = ({ navlinks, closeSidebar, sidebarOpen }) => {
           {navlinks.map((link) => (
             <li key={link.id} className="text-center py-5">
               <Link
+              
                 to={link.url}
                 className={`text-xl transition ease-linear hover:text-blue-500 duration-300 ${link.url === location.pathname ? 'text-blue-500' : 'text-black'}`}
                 onClick={() => {
                   closeSidebar();
+                  window.scrollTo(0, 0);
                 }}
               >
                 {link.name}

@@ -16,6 +16,9 @@ import {
   faBriefcase,
 } from "@fortawesome/free-solid-svg-icons";
 
+// css imports
+import "./Footer.css";
+
 const Footer = () => {
   const contacts = [
     {
@@ -64,18 +67,18 @@ const Footer = () => {
     },
     {
       id: 2,
-      name: "About Us",
-      url: "/about",
+      name: "Shop",
+      url: "/shop",
     },
     {
       id: 3,
-      name: "Our Products",
-      url: "/products",
+      name: "Portfolio",
+      url: "/portfolio",
     },
     {
       id: 4,
-      name: "Our Team",
-      url: "/team",
+      name: "About Us",
+      url: "/about",
     },
   ];
 
@@ -127,7 +130,7 @@ const Footer = () => {
               width="100%"
               height="300"
               frameBorder="0"
-              style={{border: "0"}}
+              style={{ border: "0" }}
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
@@ -142,6 +145,7 @@ const Footer = () => {
             {footerlinks.map((el) => (
               <li key={el.id}>
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to={el.url}
                   className="hover:text-blue-500 transition duration-300 ease-linear"
                 >
@@ -156,7 +160,9 @@ const Footer = () => {
               </li>
             ))}
           </ul>
-          <p className="mt-10 text-center">Copyright © 2024. All Rights Reserved.</p>
+          <p className="mt-10 text-center">
+            Copyright © 2024. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

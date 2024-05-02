@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@media screen and (min-width: 1024px) {
+    .min-height-fix{
+        min-height: calc(100vh - (475px + 80px));
+    }
+}
