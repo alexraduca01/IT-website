@@ -1,0 +1,29 @@
+.card-container:hover .url-container {
+  opacity: 0;
+}
+
+.customer-container {
+  height: 0;
+  transition: all 0.2s linear;
+}
+
+.card-container:hover .customer-container {
+  padding: 0.5rem;
+  height: fit-content;
+}
+
+.customer-container > p {
+  display: none;
+}
+
+.customer-container > h2 {
+    display: none;
+}
+
+.card-container:hover > .customer-container > p {
+  display: block;
+}
+
+.card-container:hover > .customer-container > h2 {
+  display: block;
+}
